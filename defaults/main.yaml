@@ -1,6 +1,6 @@
-satellite_server: 'satellite.example.es'
-satellite_username: admin
-satellite_password: 'veryverycomplex'
+satellite_server: "{{ lookup('env', 'SATELLITE_SERVER_URL') }}"
+satellite_username: "{{ lookup('env', 'SATELLITE_USERNAME') }}"
+satellite_password: "{{ lookup('env', 'SATELLITE_PASSWORD') }}"
 capsule_server: 'satellite.example.es'
 capsule_port: '9090'
 policy_name: 'test01'
