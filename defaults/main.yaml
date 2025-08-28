@@ -1,7 +1,7 @@
-satellite_server: 'satellite.example.es'
-satellite_username: admin
-satellite_password: 'veryverycomplex'
-capsule_server: 'satellite.example.es'
+satellite_server: "{{ lookup('ansible.builtin.env', 'SATELLITE_SERVER_URL', default='satellite.example.es') }}"
+satellite_username: "{{ lookup('ansible.builtin.env', 'SATELLITE_USERNAME', default='admin') }}"
+satellite_password:  "{{ lookup('ansible.builtin.env', 'SATELLITE_PASSWORD', default='pass') }}"
+capsule_server:  "{{ lookup('ansible.builtin.env', 'SATELLITE_SERVER_URL', default='satellite.example.es') }}"
 capsule_port: '9090'
 policy_name: 'test01'
 crontab_hour: 2
